@@ -1,0 +1,14 @@
+debug/TelegramSenderWidget.o
+debug/main.o
+debug/mytime.o
+debug/qrcodewindow.o
+debug/settingswindow.o
+debug/student.o
+debug/table.o
+debug/qrcodegen.o
+debug/moc_TelegramSenderWidget.o
+debug/moc_mytime.o
+debug/moc_qrcodewindow.o
+debug/moc_settingswindow.o
+debug/moc_student.o
+debug/moc_table.o
