@@ -1,0 +1,14 @@
+release/TelegramSenderWidget.o
+release/main.o
+release/mytime.o
+release/qrcodewindow.o
+release/settingswindow.o
+release/student.o
+release/table.o
+release/qrcodegen.o
+release/moc_TelegramSenderWidget.o
+release/moc_mytime.o
+release/moc_qrcodewindow.o
+release/moc_settingswindow.o
+release/moc_student.o
+release/moc_table.o

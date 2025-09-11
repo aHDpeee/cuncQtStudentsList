@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QTimer>
+#include <QResizeEvent>
 
 class MyTime : public QWidget
 {
@@ -14,7 +15,16 @@ public:
     QLabel* time;
     QTimer t;
 private:
-    void resizeEvent(QResizeEvent* event) override;
+void resizeEvent(QResizeEvent* event) override {
+    int h = event->size().height();
+
+    if (event->size().width()==h*6) return;
+    resize(h*5, h);
+    time->resize(h*5,h);
+    time->setFont(QFont("Consolas", h*0.8));
+
+    QWidget::resizeEvent(event);
+}
     void savePos();
     void loadPos();
 

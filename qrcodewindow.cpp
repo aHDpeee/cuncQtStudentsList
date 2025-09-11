@@ -5,9 +5,9 @@
 QrCodeWindow::QrCodeWindow()
 {
     setWindowFlags(windowFlags() | Qt::Tool);
-    qDebug()<<"qrload";
+    qrLabel->setScaledContents(true);
     loadPos();
-    setFixedSize(sizeHint());
+    qDebug()<<"qrload";
     setAttribute(Qt::WA_DeleteOnClose);
     setStyleSheet("background-color: black; color: white;");
     setWindowTitle(">_ Meals");

@@ -54,10 +54,11 @@ void resizeEvent(QResizeEvent* event) override {
     int h = event->size().height();
 
     int side = qMin(w, h);
+    qrLabel->setGeometry(0,0,side,side);
+    if (w==h) return;
     resize(side, side);
 
     QWidget::resizeEvent(event);
-    qrLabel->setGeometry(0,0,side,side);
 }
 };
 

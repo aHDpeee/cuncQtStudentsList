@@ -11,6 +11,7 @@ SettingsWindow::SettingsWindow(QWidget* parent)
     setWindowFlags(windowFlags() | Qt::Tool);
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowTitle(">_ Settings");
+    setStyleSheet("color: white; background: black;");
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
 
     QHBoxLayout* classLayout = new QHBoxLayout();
