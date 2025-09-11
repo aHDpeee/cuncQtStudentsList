@@ -14,6 +14,7 @@ TelegramSenderWidget::TelegramSenderWidget(const QString &token, const QString &
     setWindowFlags(windowFlags() | Qt::Tool);
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowTitle(">_ Telegram");
+    setStyleSheet("color: white; background: black;");
     manager = new QNetworkAccessManager(this);
 
     QVBoxLayout* layout = new QVBoxLayout(this);

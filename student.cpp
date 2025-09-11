@@ -30,7 +30,7 @@ void Student::init(){
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this, &QLabel::customContextMenuRequested, [this](const QPoint &pos){
             QMenu menu(this);
-            menu.setStyleSheet("color:white;");
+            menu.setStyleSheet("color:white; background: black;");
             menu.addAction("Присутствие", this, [this](){
                 here = !here;
                 if (here){

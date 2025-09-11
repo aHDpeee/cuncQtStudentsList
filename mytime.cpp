@@ -11,6 +11,7 @@ MyTime::MyTime(QWidget *parent)
     setStyleSheet("background-color: black; color: white;");
     setAttribute(Qt::WA_DeleteOnClose);
     loadPos();
+    qDebug() << "QrLoaded";
 
     time = new QLabel(this);
     time->setText("888");
@@ -25,10 +26,6 @@ MyTime::MyTime(QWidget *parent)
 
 }
 
-void MyTime::resizeEvent(QResizeEvent *event){
-    time->setFont(QFont("Consolas", height()*0.6, 800, 0));
-    time->setGeometry(0,0,width(), height());
-}
 
 void MyTime::savePos(){
     QSettings s("timepos.ini", QSettings::IniFormat);

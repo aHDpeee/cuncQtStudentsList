@@ -22,6 +22,7 @@ Table::Table(QWidget *parent)
 {
     setWindowFlags(windowFlags() | Qt::Tool);
     setAttribute(Qt::WA_DeleteOnClose);
+    qDebug()<<"Table";
 
     lay = new QVBoxLayout(this);
     studentslay = new QVBoxLayout();

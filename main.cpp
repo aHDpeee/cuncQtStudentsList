@@ -10,5 +10,6 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(true);
     Table* w = new Table(); w->show();
     MyTime* t = new MyTime(); t->show();
+
     return a.exec();
 }
