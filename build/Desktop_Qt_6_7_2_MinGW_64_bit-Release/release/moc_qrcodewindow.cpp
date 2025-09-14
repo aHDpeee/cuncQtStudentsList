@@ -39,7 +39,7 @@ constexpr auto qt_meta_stringdata_CLASSQrCodeWindowENDCLASS = QtMocHelpers::stri
     "QrCodeWindow",
     "update",
     "",
-    "text",
+    "inputtext",
     "resizeEvent",
     "QResizeEvent*",
     "event"

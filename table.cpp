@@ -16,6 +16,7 @@
 #include <QSpacerItem>
 #include <QPalette>
 #include <QFont>
+#include <mytime.h>
 
 Table::Table(QWidget *parent)
     : QWidget(parent)
@@ -87,7 +88,18 @@ Table::Table(QWidget *parent)
             TelegramSenderWidget* t= new TelegramSenderWidget(botToken, chatId);
             t->show();
             return;
-
+        }
+        if(text == "time"){
+            MyTime* mytime = new MyTime();
+            mytime->show();
+            return;
+        }
+        if(text == "qr"){
+            QrCodeWindow* qrcodewindow = new QrCodeWindow();
+            connect(this, &Table::makeQrCode, qrcodewindow, &QrCodeWindow::update);
+            qrcodewindow->show();
+            qrCodeUpdate();
+            return;
         }
         for (Student* ss : students) if (ss->fio == text) return;
 

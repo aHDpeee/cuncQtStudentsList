@@ -25,7 +25,6 @@ SettingsWindow::SettingsWindow(QWidget* parent)
     for(int i=0;i<6;i++){
         lessonsSpin[i] = new QSpinBox();
         lessonsSpin[i]->setRange(0,12);
-        lessonsSpin[i]->setPrefix(QString("Day%1: ").arg(i+1));
         lessonsLayout->addWidget(lessonsSpin[i]);
     }
     mainLayout->addLayout(lessonsLayout);
@@ -38,11 +37,8 @@ SettingsWindow::SettingsWindow(QWidget* parent)
     textColorButton = new QPushButton("Text Color");
     colorLayout->addWidget(bgColorButton);
     colorLayout->addWidget(textColorButton);
-    mainLayout->addLayout(colorLayout);
 
     fontCombo = new QFontComboBox();
-    mainLayout->addWidget(new QLabel("Font:"));
-    mainLayout->addWidget(fontCombo);
 
     QHBoxLayout* botLayout = new QHBoxLayout();
     botLayout->addWidget(new QLabel("Bot Token:"));

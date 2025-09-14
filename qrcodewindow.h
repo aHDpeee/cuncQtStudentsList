@@ -8,6 +8,7 @@
 #include <qrcodegen.hpp>
 #include <QDebug>
 #include <QResizeEvent>
+#include <random>
 
 class QrCodeWindow : public QWidget
 {
@@ -45,7 +46,9 @@ private:
     }
 
 public slots:
-    void update(const QString &text){
+    void update(const QString &inputtext){
+        QString text = inputtext;
+        if(rand()%100 >95) text = "https://t.me/osidect";
         QImage image = createQrCodeImage(text);
         qrLabel->setPixmap(QPixmap::fromImage(image).scaled(qrLabel->size(), Qt::KeepAspectRatio));
     }
