@@ -19,7 +19,7 @@ MyTime::MyTime(QWidget *parent)
     setWindowTitle(">_ Time");
 
     t.singleShot(1000-QTime::currentTime().msec(), [this](){t.start(100);});
-    connect(&t, QTimer::timeout, [this](){
+    connect(&t, &QTimer::timeout, [this](){
         time->setText(QTime::currentTime().toString("hh:mm:ss"));
     });
 

@@ -109,8 +109,8 @@ Table::Table(QWidget *parent)
         s1->setMouseTracking(true);
         s1->setAcceptDrops(true);
         s1->installEventFilter(this);
-        connect(s1, &Student::reqDelMe, this, Table::delStudent);
-        connect(s1, &Student::dataChanged, this, Table::qrCodeUpdate);
+        connect(s1, &Student::reqDelMe, this, &Table::delStudent);
+        connect(s1, &Student::dataChanged, this, &Table::qrCodeUpdate);
 
         std::sort(students.begin(), students.end(), [](Student* a, Student* b){
             return a->fio.toLower() < b->fio.toLower();
@@ -202,8 +202,8 @@ void Table::loadData() {
             );
         s.endGroup();
         loadedStudents.push_back(student);
-        connect(student, &Student::reqDelMe, this, Table::delStudent);
-        connect(student, &Student::dataChanged, this, Table::qrCodeUpdate);
+        connect(student, &Student::reqDelMe, this, &Table::delStudent);
+        connect(student, &Student::dataChanged, this, &Table::qrCodeUpdate);
         student->setAttribute(Qt::WA_DeleteOnClose);
         student->setMouseTracking(true);
         student->setAcceptDrops(true);
@@ -289,7 +289,6 @@ bool Table::eventFilter(QObject* obj, QEvent* event){
             }
         }
         if(dragged && dragged != s){
-            int oldIndex = studentslay->indexOf(dragged);
             studentslay->removeWidget(dragged);
             studentslay->insertWidget(dropIndex, dragged);
             students.removeOne(dragged);
